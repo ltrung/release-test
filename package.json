@@ -1,0 +1,17 @@
+{
+  "name": "release-test",
+  "version": "1.0.0",
+  "description": "Testing release",
+  "main": "CHANGELOG.md",
+  "files": [
+    "libs",
+    "build",
+    "CHANGELOG.md",
+    "NOTICE"
+  ],
+  "scripts": {
+    "build:release": "npm install"
+  },
+  "author": "ltrung",
+  "license": "Apache-2.0"
+}
