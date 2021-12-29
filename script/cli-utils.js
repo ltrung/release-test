@@ -10,6 +10,7 @@ const output = require('process').stdout;
 const util = require('util');
 const readline = require('readline');
 
+const YES = 'yes';
 
 const logger = {
   error: (output, info = '') => console.error('\x1b[31m%s\x1b[0m', output, info), // Red
@@ -46,24 +47,24 @@ const prompt = async (prompt) => {
       resolve(answer) 
     });
   });
-}
+};
 
-const shouldContinuePrompt = async (prompt) => {
+const shouldContinuePrompt = async () => {
   const cont = await new Promise((resolve) => {
     rl = readline.createInterface({ input , output });
-    rl.question(prompt, (answer) => {
+    rl.question(`Type '${util.format('\x1b[32m%s\x1b[0m', YES)}' to continue\n`, (answer) => {
       rl.close();
-      resolve(answer.trim().toLowerCase() === 'yes');
+      resolve(answer.trim().toLowerCase() === YES);
     });
   });
   if (!cont) {
     quit(0);
   }
-}
+};
 
 const quit = (statusCode) => {
   process.exit(statusCode);
-}
+};
 
 module.exports = {
   logger,
