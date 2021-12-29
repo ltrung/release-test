@@ -46,7 +46,7 @@ const prompt = async (prompt) => {
       resolve(answer) 
     });
   });
-}
+};
 
 const shouldContinuePrompt = async (prompt) => {
   const cont = await new Promise((resolve) => {
@@ -59,11 +59,11 @@ const shouldContinuePrompt = async (prompt) => {
   if (!cont) {
     quit(0);
   }
-}
+};
 
 const quit = (statusCode) => {
   process.exit(statusCode);
-}
+};
 
 module.exports = {
   logger,
