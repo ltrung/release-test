@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-const { versionBump, currentVersion }  = require('./version-util');
+const { versionBump, currentVersion, isPreRelease }  = require('./version-util');
 const { logger, spawnOrFail, prompt, shouldContinuePrompt, quit, process, path } = require('./cli-utils');
 
 const deployDemo = (version) => {
@@ -49,6 +49,11 @@ const release = async () => {
 };
 
 const hotfix = async () => {
+  logger.log(currentVersion);
+  if (isPreRelease(currentVersion)) {
+    logger.error(`We currently do not do hotfix for pre-release version.`);
+    quit(1);
+  }
   await cleanUp();
 
   buildAndPack();
