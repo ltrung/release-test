@@ -10,6 +10,7 @@
     "NOTICE"
   ],
   "scripts": {
+    "build": "npm install",
     "build:release": "npm install"
   },
   "author": "ltrung",

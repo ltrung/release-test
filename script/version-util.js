@@ -5,7 +5,7 @@ const { logger, spawnOrFail, prompt, shouldContinuePrompt, quit, fs, process, pa
 const currentVersion = require('../package.json').version;
 
 const isPreRelease = (version) => {
-  return version.split('.')[3] >0;
+  return version.split('.')[3] >= 0;
 };
 
 const getNewVersion = (currentVersion, versionIncrement) => {
@@ -122,5 +122,5 @@ const versionBump = async (option, branchName) => {
 module.exports = {
   versionBump,
   currentVersion,
-  updateBaseBranch
+  isPreRelease
 };
