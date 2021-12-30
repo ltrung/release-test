@@ -1,6 +1,6 @@
 {
-  "name": "release-test",
-  "version": "2.1.0",
+  "name": "release-test-ltrung",
+  "version": "3.1.0-beta.0",
   "description": "Testing release",
   "main": "CHANGELOG.md",
   "files": [
